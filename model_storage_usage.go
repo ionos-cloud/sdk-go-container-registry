@@ -18,7 +18,7 @@ import (
 
 // StorageUsage struct for StorageUsage
 type StorageUsage struct {
-	Bytes     *int32     `json:"bytes"`
+	Bytes     *int64     `json:"bytes"`
 	UpdatedAt *IonosTime `json:"updatedAt,omitempty"`
 }
 
