@@ -38,7 +38,7 @@ func main() {
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.RepositoriesApi.RegistriesRepositoriesDelete(context.Background(), registryId, name).Execute()
+    resp, err := apiClient.RepositoriesApi.RegistriesRepositoriesDelete(context.Background(), registryId, name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RepositoriesApi.RegistriesRepositoriesDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -52,7 +52,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](.md) | The unique ID of the registry | |
+|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
 |**name** | **string** | The name of the repository | |
 
 ### Other Parameters

@@ -20,6 +20,7 @@
 * [Day](models/Day.md)
 * [Location](models/Location.md)
 * [LocationsResponse](models/LocationsResponse.md)
+* [Pagination](models/Pagination.md)
 * [PaginationLinks](models/PaginationLinks.md)
 * [PatchRegistryInput](models/PatchRegistryInput.md)
 * [PatchTokenInput](models/PatchTokenInput.md)

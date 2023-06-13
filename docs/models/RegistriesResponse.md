@@ -8,15 +8,14 @@
 |**Href** | Pointer to **string** |  | [optional] |
 |**Id** | Pointer to **string** |  | [optional] |
 |**Items** | Pointer to [**[]RegistryResponse**](RegistryResponse.md) |  | [optional] |
-|**Limit** | **int32** |  | |
-|**NextPageToken** | **string** |  | |
+|**Pagination** | [**Pagination**](Pagination.md) |  | |
 |**Type** | Pointer to **string** |  | [optional] |
 
 ## Methods
 
 ### NewRegistriesResponse
 
-`func NewRegistriesResponse(links PaginationLinks, limit int32, nextPageToken string, ) *RegistriesResponse`
+`func NewRegistriesResponse(links PaginationLinks, pagination Pagination, ) *RegistriesResponse`
 
 NewRegistriesResponse instantiates a new RegistriesResponse object
 This constructor will assign default values to properties that have it defined,
@@ -136,44 +135,24 @@ HasItems returns a boolean if a field has been set.
 `func (o *RegistriesResponse) UnsetItems()`
 
 UnsetItems ensures that no value is present for Items, not even an explicit nil
-### GetLimit
+### GetPagination
 
-`func (o *RegistriesResponse) GetLimit() int32`
+`func (o *RegistriesResponse) GetPagination() Pagination`
 
-GetLimit returns the Limit field if non-nil, zero value otherwise.
+GetPagination returns the Pagination field if non-nil, zero value otherwise.
 
-### GetLimitOk
+### GetPaginationOk
 
-`func (o *RegistriesResponse) GetLimitOk() (*int32, bool)`
+`func (o *RegistriesResponse) GetPaginationOk() (*Pagination, bool)`
 
-GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
+GetPaginationOk returns a tuple with the Pagination field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLimit
+### SetPagination
 
-`func (o *RegistriesResponse) SetLimit(v int32)`
+`func (o *RegistriesResponse) SetPagination(v Pagination)`
 
-SetLimit sets Limit field to given value.
-
-
-### GetNextPageToken
-
-`func (o *RegistriesResponse) GetNextPageToken() string`
-
-GetNextPageToken returns the NextPageToken field if non-nil, zero value otherwise.
-
-### GetNextPageTokenOk
-
-`func (o *RegistriesResponse) GetNextPageTokenOk() (*string, bool)`
-
-GetNextPageTokenOk returns a tuple with the NextPageToken field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNextPageToken
-
-`func (o *RegistriesResponse) SetNextPageToken(v string)`
-
-SetNextPageToken sets NextPageToken field to given value.
+SetPagination sets Pagination field to given value.
 
 
 ### GetType

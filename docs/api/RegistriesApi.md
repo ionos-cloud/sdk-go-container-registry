@@ -40,7 +40,7 @@ func main() {
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.RegistriesApi.RegistriesDelete(context.Background(), registryId).Execute()
+    resp, err := apiClient.RegistriesApi.RegistriesDelete(context.Background(), registryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegistriesApi.RegistriesDelete``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -54,7 +54,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](.md) | The unique ID of the registry | |
+|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -120,7 +120,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](.md) | The unique ID of the registry | |
+|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to an apiRegistriesFindByIdRequest
 
 ### Return type
 
-[**RegistryResponse**](RegistryResponse.md)
+[**RegistryResponse**](../models/RegistryResponse.md)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ Other parameters are passed through a pointer to an apiRegistriesFindByIdRequest
 var result RegistriesResponse = RegistriesGet(ctx)
                       .FilterName(filterName)
                       .Limit(limit)
-                      .NextPageToken(nextPageToken)
+                      .PaginationToken(paginationToken)
                       .Execute()
 ```
 
@@ -170,12 +170,12 @@ import (
 
 func main() {
     filterName := "my-registry" // string | The registry name to search for (optional)
-    limit := "limit_example" // string | The maximum number of elements to return (used together with nextPageToken for pagination) (optional) (default to "100")
-    nextPageToken := "nextPageToken_example" // string | The next page from the complete list of elements (used together with limit for pagination) (optional)
+    limit := "limit_example" // string | The maximum number of elements to return (used together with pagination.token for pagination) (optional) (default to "100")
+    paginationToken := "eyJ2IjoibWV0YS5rOHMuaW8vdjEiLCJydiI6MTYzMjQ0OTk2ODAsInN0YXJ0IjoiM2RmYTc3YjctZGIwNS00MjMwLThmMjAtOGU3NjJlOTUxOTUzXHUwMDAwIn0" // string | An opaque token used to iterate the set of results (used together with limit for pagination) (optional)
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
-    resource, resp, err := apiClient.RegistriesApi.RegistriesGet(context.Background()).FilterName(filterName).Limit(limit).NextPageToken(nextPageToken).Execute()
+    resource, resp, err := apiClient.RegistriesApi.RegistriesGet(context.Background()).FilterName(filterName).Limit(limit).PaginationToken(paginationToken).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RegistriesApi.RegistriesGet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", resp)
@@ -197,12 +197,12 @@ Other parameters are passed through a pointer to an apiRegistriesGetRequest stru
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **filterName** | **string** | The registry name to search for | |
-| **limit** | **string** | The maximum number of elements to return (used together with nextPageToken for pagination) | [default to &quot;100&quot;]|
-| **nextPageToken** | **string** | The next page from the complete list of elements (used together with limit for pagination) | |
+| **limit** | **string** | The maximum number of elements to return (used together with pagination.token for pagination) | [default to &quot;100&quot;]|
+| **paginationToken** | **string** | An opaque token used to iterate the set of results (used together with limit for pagination) | |
 
 ### Return type
 
-[**RegistriesResponse**](RegistriesResponse.md)
+[**RegistriesResponse**](../models/RegistriesResponse.md)
 
 ### HTTP request headers
 
@@ -258,7 +258,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](.md) | The unique ID of the registry | |
+|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -267,11 +267,11 @@ Other parameters are passed through a pointer to an apiRegistriesPatchRequest st
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **patchRegistryInput** | [**PatchRegistryInput**](PatchRegistryInput.md) |  | |
+| **patchRegistryInput** | [**PatchRegistryInput**](../models/PatchRegistryInput.md) |  | |
 
 ### Return type
 
-[**RegistryResponse**](RegistryResponse.md)
+[**RegistryResponse**](../models/RegistryResponse.md)
 
 ### HTTP request headers
 
@@ -331,11 +331,11 @@ Other parameters are passed through a pointer to an apiRegistriesPostRequest str
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **postRegistryInput** | [**PostRegistryInput**](PostRegistryInput.md) |  | |
+| **postRegistryInput** | [**PostRegistryInput**](../models/PostRegistryInput.md) |  | |
 
 ### Return type
 
-[**PostRegistryOutput**](PostRegistryOutput.md)
+[**PostRegistryOutput**](../models/PostRegistryOutput.md)
 
 ### HTTP request headers
 
@@ -391,7 +391,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](.md) | The unique ID of the registry | |
+|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -400,11 +400,11 @@ Other parameters are passed through a pointer to an apiRegistriesPutRequest stru
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **putRegistryInput** | [**PutRegistryInput**](PutRegistryInput.md) |  | |
+| **putRegistryInput** | [**PutRegistryInput**](../models/PutRegistryInput.md) |  | |
 
 ### Return type
 
-[**PutRegistryOutput**](PutRegistryOutput.md)
+[**PutRegistryOutput**](../models/PutRegistryOutput.md)
 
 ### HTTP request headers
 
