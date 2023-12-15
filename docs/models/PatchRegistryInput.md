@@ -5,6 +5,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 |**GarbageCollectionSchedule** | Pointer to [**NullableWeeklySchedule**](WeeklySchedule.md) |  | [optional] |
+|**Features** | Pointer to [**RegistryFeatures**](RegistryFeatures.md) |  | [optional] |
 
 ## Methods
 
@@ -60,4 +61,29 @@ HasGarbageCollectionSchedule returns a boolean if a field has been set.
 `func (o *PatchRegistryInput) UnsetGarbageCollectionSchedule()`
 
 UnsetGarbageCollectionSchedule ensures that no value is present for GarbageCollectionSchedule, not even an explicit nil
+### GetFeatures
+
+`func (o *PatchRegistryInput) GetFeatures() RegistryFeatures`
+
+GetFeatures returns the Features field if non-nil, zero value otherwise.
+
+### GetFeaturesOk
+
+`func (o *PatchRegistryInput) GetFeaturesOk() (*RegistryFeatures, bool)`
+
+GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatures
+
+`func (o *PatchRegistryInput) SetFeatures(v RegistryFeatures)`
+
+SetFeatures sets Features field to given value.
+
+### HasFeatures
+
+`func (o *PatchRegistryInput) HasFeatures() bool`
+
+HasFeatures returns a boolean if a field has been set.
+
 

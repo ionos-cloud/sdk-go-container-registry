@@ -7,6 +7,7 @@
 |**GarbageCollectionSchedule** | Pointer to [**NullableWeeklySchedule**](WeeklySchedule.md) |  | [optional] |
 |**Location** | **string** |  | |
 |**Name** | **string** |  | |
+|**Features** | Pointer to [**RegistryFeatures**](RegistryFeatures.md) |  | [optional] |
 
 ## Methods
 
@@ -101,5 +102,30 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
+### GetFeatures
+
+`func (o *PostRegistryProperties) GetFeatures() RegistryFeatures`
+
+GetFeatures returns the Features field if non-nil, zero value otherwise.
+
+### GetFeaturesOk
+
+`func (o *PostRegistryProperties) GetFeaturesOk() (*RegistryFeatures, bool)`
+
+GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatures
+
+`func (o *PostRegistryProperties) SetFeatures(v RegistryFeatures)`
+
+SetFeatures sets Features field to given value.
+
+### HasFeatures
+
+`func (o *PostRegistryProperties) HasFeatures() bool`
+
+HasFeatures returns a boolean if a field has been set.
 
 

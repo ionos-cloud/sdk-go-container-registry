@@ -17,6 +17,8 @@ var result LocationsResponse = LocationsGet(ctx)
 
 Get container registry locations
 
+
+
 ### Example
 
 ```go
@@ -62,4 +64,20 @@ Other parameters are passed through a pointer to an apiLocationsGetRequest struc
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"LocationsApiService.LocationsGet"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "LocationsApiService.LocationsGet": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "LocationsApiService.LocationsGet": {
+    "port": "8443",
+},
+})
+```
 

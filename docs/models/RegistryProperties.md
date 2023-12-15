@@ -9,6 +9,7 @@
 |**Location** | **string** |  | |
 |**Name** | **string** |  | |
 |**StorageUsage** | Pointer to [**NullableStorageUsage**](StorageUsage.md) |  | [optional] |
+|**Features** | Pointer to [**RegistryFeatures**](RegistryFeatures.md) |  | [optional] |
 
 ## Methods
 
@@ -164,4 +165,29 @@ HasStorageUsage returns a boolean if a field has been set.
 `func (o *RegistryProperties) UnsetStorageUsage()`
 
 UnsetStorageUsage ensures that no value is present for StorageUsage, not even an explicit nil
+### GetFeatures
+
+`func (o *RegistryProperties) GetFeatures() RegistryFeatures`
+
+GetFeatures returns the Features field if non-nil, zero value otherwise.
+
+### GetFeaturesOk
+
+`func (o *RegistryProperties) GetFeaturesOk() (*RegistryFeatures, bool)`
+
+GetFeaturesOk returns a tuple with the Features field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatures
+
+`func (o *RegistryProperties) SetFeatures(v RegistryFeatures)`
+
+SetFeatures sets Features field to given value.
+
+### HasFeatures
+
+`func (o *RegistryProperties) HasFeatures() bool`
+
+HasFeatures returns a boolean if a field has been set.
+
 

@@ -22,6 +22,8 @@ var result  = RegistriesTokensDelete(ctx, registryId, tokenId)
 
 Delete token
 
+
+
 ### Example
 
 ```go
@@ -36,8 +38,8 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
-    tokenId := TODO // string | The unique ID of the token
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
+    tokenId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the token
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -55,8 +57,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
-|**tokenId** | [**string**](../models/.md) | The unique ID of the token | |
+|**registryId** | **string** | The unique ID of the registry | |
+|**tokenId** | **string** | The unique ID of the token | |
 
 ### Other Parameters
 
@@ -75,6 +77,22 @@ Other parameters are passed through a pointer to an apiRegistriesTokensDeleteReq
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensDelete"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensDelete": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensDelete": {
+    "port": "8443",
+},
+})
+```
 
 
 ## RegistriesTokensFindById
@@ -102,8 +120,8 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
-    tokenId := TODO // string | The unique ID of the token
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
+    tokenId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the token
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -123,8 +141,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
-|**tokenId** | [**string**](../models/.md) | The unique ID of the token | |
+|**registryId** | **string** | The unique ID of the registry | |
+|**tokenId** | **string** | The unique ID of the token | |
 
 ### Other Parameters
 
@@ -144,6 +162,22 @@ Other parameters are passed through a pointer to an apiRegistriesTokensFindByIdR
 - **Accept**: application/json
 
 
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensFindById"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensFindById": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensFindById": {
+    "port": "8443",
+},
+})
+```
+
 
 ## RegistriesTokensGet
 
@@ -155,6 +189,8 @@ var result TokensResponse = RegistriesTokensGet(ctx, registryId)
 ```
 
 List all tokens for the container registry
+
+
 
 ### Example
 
@@ -170,7 +206,7 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
     offset := "offset_example" // string | The first element (from the complete list of the elements) to include in the response (used together with limit for pagination) (optional) (default to "0")
     limit := "limit_example" // string | The maximum number of elements to return (used together with offset for pagination) (optional) (default to "100")
 
@@ -192,7 +228,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
+|**registryId** | **string** | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -213,6 +249,22 @@ Other parameters are passed through a pointer to an apiRegistriesTokensGetReques
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensGet"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensGet": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensGet": {
+    "port": "8443",
+},
+})
+```
 
 
 ## RegistriesTokensPatch
@@ -241,8 +293,8 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
-    tokenId := TODO // string | The unique ID of the token
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
+    tokenId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the token
     patchTokenInput := *openapiclient.NewPatchTokenInput() // PatchTokenInput | 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -263,8 +315,8 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
-|**tokenId** | [**string**](../models/.md) | The unique ID of the token | |
+|**registryId** | **string** | The unique ID of the registry | |
+|**tokenId** | **string** | The unique ID of the token | |
 
 ### Other Parameters
 
@@ -284,6 +336,22 @@ Other parameters are passed through a pointer to an apiRegistriesTokensPatchRequ
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensPatch"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensPatch": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensPatch": {
+    "port": "8443",
+},
+})
+```
 
 
 ## RegistriesTokensPost
@@ -312,7 +380,7 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
     postTokenInput := *openapiclient.NewPostTokenInput(*openapiclient.NewPostTokenProperties("push-token")) // PostTokenInput | 
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
@@ -333,7 +401,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
+|**registryId** | **string** | The unique ID of the registry | |
 
 ### Other Parameters
 
@@ -353,6 +421,22 @@ Other parameters are passed through a pointer to an apiRegistriesTokensPostReque
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensPost"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensPost": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensPost": {
+    "port": "8443",
+},
+})
+```
 
 
 ## RegistriesTokensPut
@@ -381,7 +465,7 @@ import (
 )
 
 func main() {
-    registryId := TODO // string | The unique ID of the registry
+    registryId := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string | The unique ID of the registry
     tokenId := "tokenId_example" // string | The unique ID of the token
     putTokenInput := *openapiclient.NewPutTokenInput(*openapiclient.NewPostTokenProperties("push-token")) // PutTokenInput | 
 
@@ -403,7 +487,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**registryId** | [**string**](../models/.md) | The unique ID of the registry | |
+|**registryId** | **string** | The unique ID of the registry | |
 |**tokenId** | **string** | The unique ID of the token | |
 
 ### Other Parameters
@@ -424,4 +508,20 @@ Other parameters are passed through a pointer to an apiRegistriesTokensPutReques
 - **Content-Type**: application/json
 - **Accept**: application/json
 
+
+### URLs Configuration per Operation
+Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
+An operation is uniquely identified by `"TokensApiService.RegistriesTokensPut"` string.
+Similar rules for overriding default operation server index and variables apply by using `sw.ContextOperationServerIndices` and `sw.ContextOperationServerVariables` context maps.
+
+```golang
+ctx := context.WithValue(context.Background(), {packageName}.ContextOperationServerIndices, map[string]int{
+    "TokensApiService.RegistriesTokensPut": 2,
+})
+ctx = context.WithValue(context.Background(), {packageName}.ContextOperationServerVariables, map[string]map[string]string{
+    "TokensApiService.RegistriesTokensPut": {
+    "port": "8443",
+},
+})
+```
 
