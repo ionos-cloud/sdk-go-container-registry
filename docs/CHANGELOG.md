@@ -5,8 +5,8 @@
 - Rename `name` ro `repositoryName` in RegistriesRepositoriesDelete
 ### Features:
 Added support for **Container Registry Vulnerability Scanning**:
-- New APIs added: `api_artifacts.go` and `api_vulnerabilities.go
-- Added new methods to repositories_api: `RegistriesRepositoriesFindByName` and `RegistriesRepositoriesGet`
+- New APIs added: `api_artifacts.go` and `api_vulnerabilities.go`
+- Added new methods to `api_repositories`: `RegistriesRepositoriesFindByName` and `RegistriesRepositoriesGet`
 
 ## 1.0.1
 - `Bytes` field updated from `int32` to `int64`
