@@ -10,6 +10,7 @@
 |**Name** | **string** |  | |
 |**StorageUsage** | Pointer to [**NullableStorageUsage**](StorageUsage.md) |  | [optional] |
 |**Features** | Pointer to [**RegistryFeatures**](RegistryFeatures.md) |  | [optional] |
+|**ApiSubnetAllowList** | Pointer to **[]string** | The subnet CIDRs that are allowed to connect to the registry.  Specify \&quot;a.b.c.d/32\&quot; for an individual IP address.\\ __Note__: If this list is empty or not set, there are no restrictions.  | [optional] |
 
 ## Methods
 
@@ -189,5 +190,30 @@ SetFeatures sets Features field to given value.
 `func (o *RegistryProperties) HasFeatures() bool`
 
 HasFeatures returns a boolean if a field has been set.
+
+### GetApiSubnetAllowList
+
+`func (o *RegistryProperties) GetApiSubnetAllowList() []string`
+
+GetApiSubnetAllowList returns the ApiSubnetAllowList field if non-nil, zero value otherwise.
+
+### GetApiSubnetAllowListOk
+
+`func (o *RegistryProperties) GetApiSubnetAllowListOk() (*[]string, bool)`
+
+GetApiSubnetAllowListOk returns a tuple with the ApiSubnetAllowList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiSubnetAllowList
+
+`func (o *RegistryProperties) SetApiSubnetAllowList(v []string)`
+
+SetApiSubnetAllowList sets ApiSubnetAllowList field to given value.
+
+### HasApiSubnetAllowList
+
+`func (o *RegistryProperties) HasApiSubnetAllowList() bool`
+
+HasApiSubnetAllowList returns a boolean if a field has been set.
 
 

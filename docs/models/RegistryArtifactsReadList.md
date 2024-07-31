@@ -8,8 +8,8 @@
 |**Type** | **string** |  | |
 |**Href** | **string** |  | |
 |**Items** | Pointer to [**[]ArtifactRead**](ArtifactRead.md) |  | [optional] |
-|**Offset** | **int32** | The offset specified in the request (if none was specified, the default offset is 0) (not implemented yet).  | [readonly] |
-|**Limit** | **int32** | The limit specified in the request (if none was specified, use the endpoint&#39;s default pagination limit) (not implemented yet, always return number of items).  | [readonly] |
+|**Offset** | **int32** | The offset specified in the request (if none was specified, the default offset is 0).  | [readonly] |
+|**Limit** | **int32** | The limit specified in the request (if none was specified, use the endpoint&#39;s default pagination limit).  | [readonly] |
 |**Links** | [**Links**](Links.md) |  | |
 
 ## Methods

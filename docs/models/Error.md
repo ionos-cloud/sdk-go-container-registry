@@ -5,7 +5,7 @@
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 |**HttpStatus** | Pointer to **int32** | The HTTP status code of the operation. | [optional] |
-|**Messages** | Pointer to [**[]ErrorMessages**](ErrorMessages.md) |  | [optional] |
+|**Messages** | Pointer to [**[]ErrorMessages**](ErrorMessages.md) | A list of error messages.  | [optional] |
 
 ## Methods
 

@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-    vulnerabilityId := "CVE-2019-1234" // string | The ID of the Vulnerability that should be retrieved.
+    vulnerabilityId := "CVE-2019-1234" // string | The ID of the Vulnerability.
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -53,7 +53,7 @@ func main() {
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
-|**vulnerabilityId** | **string** | The ID of the Vulnerability that should be retrieved. | |
+|**vulnerabilityId** | **string** | The ID of the Vulnerability. | |
 
 ### Other Parameters
 

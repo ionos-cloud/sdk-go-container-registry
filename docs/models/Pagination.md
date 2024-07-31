@@ -4,15 +4,15 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-|**Offset** | Pointer to **int32** | The offset specified in the request (if none was specified, the default offset is 0) (not implemented yet).  | [optional] [readonly] |
-|**Limit** | Pointer to **int32** | The limit specified in the request (if none was specified, use the endpoint&#39;s default pagination limit) (not implemented yet, always return number of items).  | [optional] [readonly] |
-|**Links** | Pointer to [**Links**](Links.md) |  | [optional] |
+|**Offset** | **int32** | The offset specified in the request (if none was specified, the default offset is 0).  | [readonly] |
+|**Limit** | **int32** | The limit specified in the request (if none was specified, use the endpoint&#39;s default pagination limit).  | [readonly] |
+|**Links** | [**Links**](Links.md) |  | |
 
 ## Methods
 
 ### NewPagination
 
-`func NewPagination() *Pagination`
+`func NewPagination(offset int32, limit int32, links Links, ) *Pagination`
 
 NewPagination instantiates a new Pagination object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetOffset sets Offset field to given value.
 
-### HasOffset
-
-`func (o *Pagination) HasOffset() bool`
-
-HasOffset returns a boolean if a field has been set.
 
 ### GetLimit
 
@@ -71,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetLimit sets Limit field to given value.
 
-### HasLimit
-
-`func (o *Pagination) HasLimit() bool`
-
-HasLimit returns a boolean if a field has been set.
 
 ### GetLinks
 
@@ -96,10 +86,5 @@ and a boolean to check if the value has been set.
 
 SetLinks sets Links field to given value.
 
-### HasLinks
-
-`func (o *Pagination) HasLinks() bool`
-
-HasLinks returns a boolean if a field has been set.
 
 

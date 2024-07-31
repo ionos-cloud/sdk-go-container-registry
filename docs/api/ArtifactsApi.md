@@ -132,7 +132,7 @@ import (
 func main() {
     registryId := "1e41a73c-59d0-5507-86dd-fa2fc2501cfd" // string | The ID (UUID) of the Registry.
     repositoryName := "my-service" // string | The Name of the Repository.
-    digest := "sha256:12345678901234567890123456789012" // string | The Digest of the Artifact that should be retrieved.
+    digest := "sha256:12345678901234567890123456789012" // string | The Digest of the Artifact.
 
     configuration := ionoscloud.NewConfiguration("USERNAME", "PASSWORD", "TOKEN", "HOST_URL")
     apiClient := ionoscloud.NewAPIClient(configuration)
@@ -154,7 +154,7 @@ func main() {
 |**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.|
 |**registryId** | **string** | The ID (UUID) of the Registry. | |
 |**repositoryName** | **string** | The Name of the Repository. | |
-|**digest** | **string** | The Digest of the Artifact that should be retrieved. | |
+|**digest** | **string** | The Digest of the Artifact. | |
 
 ### Other Parameters
 
