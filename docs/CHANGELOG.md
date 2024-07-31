@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.2.0
+### Changes
+- Added new property to `registries`: `ApiSubnetAllowList`
+
 ## 1.1.0
 ### Changes
 - Rename `name` ro `repositoryName` in RegistriesRepositoriesDelete
