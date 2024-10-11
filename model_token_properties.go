@@ -1,9 +1,9 @@
 /*
  * Container Registry service
  *
- * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0 - Added registry `apiSubnetAllowList`
+ * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0  - Added registry `apiSubnetAllowList` ### 1.2.1  - Amended `apiSubnetAllowList` Regex
  *
- * API version: 1.2.0
+ * API version: 1.2.1
  * Contact: support@cloud.ionos.com
  */
 
@@ -29,10 +29,10 @@ type TokenProperties struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTokenProperties(credentials NullableCredentials, name string) *TokenProperties {
+func NewTokenProperties(credentials Credentials, name string) *TokenProperties {
 	this := TokenProperties{}
 
-	this.Credentials = credentials.value
+	this.Credentials = &credentials
 	this.Name = &name
 
 	return &this
@@ -245,7 +245,9 @@ func (o *TokenProperties) HasStatus() bool {
 
 func (o TokenProperties) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["credentials"] = o.Credentials
+	if o.Credentials != nil {
+		toSerialize["credentials"] = o.Credentials
+	}
 
 	toSerialize["expiryDate"] = o.ExpiryDate
 
@@ -253,7 +255,9 @@ func (o TokenProperties) MarshalJSON() ([]byte, error) {
 		toSerialize["name"] = o.Name
 	}
 
-	toSerialize["scopes"] = o.Scopes
+	if o.Scopes != nil {
+		toSerialize["scopes"] = o.Scopes
+	}
 
 	if o.Status != nil {
 		toSerialize["status"] = o.Status

@@ -1,9 +1,9 @@
 /*
  * Container Registry service
  *
- * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0 - Added registry `apiSubnetAllowList`
+ * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0  - Added registry `apiSubnetAllowList` ### 1.2.1  - Amended `apiSubnetAllowList` Regex
  *
- * API version: 1.2.0
+ * API version: 1.2.1
  * Contact: support@cloud.ionos.com
  */
 
@@ -26,10 +26,10 @@ type StorageUsage struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStorageUsage(bytes NullableInt64) *StorageUsage {
+func NewStorageUsage(bytes int64) *StorageUsage {
 	this := StorageUsage{}
 
-	this.Bytes = bytes.value
+	this.Bytes = &bytes
 
 	return &this
 }
@@ -127,9 +127,13 @@ func (o *StorageUsage) HasUpdatedAt() bool {
 
 func (o StorageUsage) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["bytes"] = o.Bytes
+	if o.Bytes != nil {
+		toSerialize["bytes"] = o.Bytes
+	}
 
-	toSerialize["updatedAt"] = o.UpdatedAt
+	if o.UpdatedAt != nil {
+		toSerialize["updatedAt"] = o.UpdatedAt
+	}
 
 	return json.Marshal(toSerialize)
 }

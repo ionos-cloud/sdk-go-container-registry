@@ -1,9 +1,9 @@
 /*
  * Container Registry service
  *
- * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0 - Added registry `apiSubnetAllowList`
+ * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0  - Added registry `apiSubnetAllowList` ### 1.2.1  - Amended `apiSubnetAllowList` Regex
  *
- * API version: 1.2.0
+ * API version: 1.2.1
  * Contact: support@cloud.ionos.com
  */
 
@@ -19,7 +19,7 @@ import (
 type PatchRegistryInput struct {
 	GarbageCollectionSchedule *WeeklySchedule   `json:"garbageCollectionSchedule,omitempty"`
 	Features                  *RegistryFeatures `json:"features,omitempty"`
-	// The subnet CIDRs that are allowed to connect to the registry.  Specify \"a.b.c.d/32\" for an individual IP address.\\ __Note__: If this list is empty or not set, there are no restrictions.
+	// Subnets and IPs that are allowed to access the registry API, supports IPv4 and IPv6. Maximum of 25 items may be specified. If no CIDR is given /32 and /128 are assumed for IPv4 and IPv6 respectively. 0.0.0.0/0 can be used to deny all traffic. __Note__: If this list is empty or not set, there are no restrictions.
 	ApiSubnetAllowList *[]string `json:"apiSubnetAllowList,omitempty"`
 }
 
@@ -157,7 +157,9 @@ func (o *PatchRegistryInput) HasApiSubnetAllowList() bool {
 
 func (o PatchRegistryInput) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["garbageCollectionSchedule"] = o.GarbageCollectionSchedule
+	if o.GarbageCollectionSchedule != nil {
+		toSerialize["garbageCollectionSchedule"] = o.GarbageCollectionSchedule
+	}
 
 	if o.Features != nil {
 		toSerialize["features"] = o.Features

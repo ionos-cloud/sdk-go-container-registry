@@ -4,7 +4,7 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-|**Credentials** | [**NullableCredentials**](Credentials.md) |  | |
+|**Credentials** | [**Credentials**](Credentials.md) |  | |
 |**ExpiryDate** | Pointer to [**NullableTime**](time.Time.md) |  | [optional] |
 |**Name** | **string** |  | |
 |**Scopes** | Pointer to [**[]Scope**](Scope.md) |  | [optional] |
@@ -14,7 +14,7 @@
 
 ### NewTokenProperties
 
-`func NewTokenProperties(credentials NullableCredentials, name string, ) *TokenProperties`
+`func NewTokenProperties(credentials Credentials, name string, ) *TokenProperties`
 
 NewTokenProperties instantiates a new TokenProperties object
 This constructor will assign default values to properties that have it defined,
@@ -49,16 +49,6 @@ and a boolean to check if the value has been set.
 SetCredentials sets Credentials field to given value.
 
 
-### SetCredentialsNil
-
-`func (o *TokenProperties) SetCredentialsNil(b bool)`
-
- SetCredentialsNil sets the value for Credentials to be an explicit nil
-
-### UnsetCredentials
-`func (o *TokenProperties) UnsetCredentials()`
-
-UnsetCredentials ensures that no value is present for Credentials, not even an explicit nil
 ### GetExpiryDate
 
 `func (o *TokenProperties) GetExpiryDate() time.Time`
@@ -139,16 +129,6 @@ SetScopes sets Scopes field to given value.
 
 HasScopes returns a boolean if a field has been set.
 
-### SetScopesNil
-
-`func (o *TokenProperties) SetScopesNil(b bool)`
-
- SetScopesNil sets the value for Scopes to be an explicit nil
-
-### UnsetScopes
-`func (o *TokenProperties) UnsetScopes()`
-
-UnsetScopes ensures that no value is present for Scopes, not even an explicit nil
 ### GetStatus
 
 `func (o *TokenProperties) GetStatus() string`

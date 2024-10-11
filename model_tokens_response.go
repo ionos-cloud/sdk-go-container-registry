@@ -1,9 +1,9 @@
 /*
  * Container Registry service
  *
- * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0 - Added registry `apiSubnetAllowList`
+ * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0  - Added registry `apiSubnetAllowList` ### 1.2.1  - Amended `apiSubnetAllowList` Regex
  *
- * API version: 1.2.0
+ * API version: 1.2.1
  * Contact: support@cloud.ionos.com
  */
 
@@ -412,7 +412,9 @@ func (o TokensResponse) MarshalJSON() ([]byte, error) {
 		toSerialize["id"] = o.Id
 	}
 
-	toSerialize["items"] = o.Items
+	if o.Items != nil {
+		toSerialize["items"] = o.Items
+	}
 
 	if o.Limit != nil {
 		toSerialize["limit"] = o.Limit

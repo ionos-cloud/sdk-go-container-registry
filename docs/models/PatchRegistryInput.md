@@ -4,9 +4,9 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-|**GarbageCollectionSchedule** | Pointer to [**NullableWeeklySchedule**](WeeklySchedule.md) |  | [optional] |
+|**GarbageCollectionSchedule** | Pointer to [**WeeklySchedule**](WeeklySchedule.md) |  | [optional] |
 |**Features** | Pointer to [**RegistryFeatures**](RegistryFeatures.md) |  | [optional] |
-|**ApiSubnetAllowList** | Pointer to **[]string** | The subnet CIDRs that are allowed to connect to the registry.  Specify \&quot;a.b.c.d/32\&quot; for an individual IP address.\\ __Note__: If this list is empty or not set, there are no restrictions.  | [optional] |
+|**ApiSubnetAllowList** | Pointer to **[]string** | Subnets and IPs that are allowed to access the registry API, supports IPv4 and IPv6. Maximum of 25 items may be specified. If no CIDR is given /32 and /128 are assumed for IPv4 and IPv6 respectively. 0.0.0.0/0 can be used to deny all traffic. __Note__: If this list is empty or not set, there are no restrictions.  | [optional] |
 
 ## Methods
 
@@ -52,16 +52,6 @@ SetGarbageCollectionSchedule sets GarbageCollectionSchedule field to given value
 
 HasGarbageCollectionSchedule returns a boolean if a field has been set.
 
-### SetGarbageCollectionScheduleNil
-
-`func (o *PatchRegistryInput) SetGarbageCollectionScheduleNil(b bool)`
-
- SetGarbageCollectionScheduleNil sets the value for GarbageCollectionSchedule to be an explicit nil
-
-### UnsetGarbageCollectionSchedule
-`func (o *PatchRegistryInput) UnsetGarbageCollectionSchedule()`
-
-UnsetGarbageCollectionSchedule ensures that no value is present for GarbageCollectionSchedule, not even an explicit nil
 ### GetFeatures
 
 `func (o *PatchRegistryInput) GetFeatures() RegistryFeatures`

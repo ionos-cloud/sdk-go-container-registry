@@ -1,9 +1,9 @@
 /*
  * Container Registry service
  *
- * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0 - Added registry `apiSubnetAllowList`
+ * ## Overview Container Registry service enables IONOS clients to manage docker and OCI compliant registries for use by their managed Kubernetes clusters. Use a Container Registry to ensure you have a privately accessed registry to efficiently support image pulls. ## Changelog ### 1.1.0  - Added new endpoints for Repositories  - Added new endpoints for Artifacts  - Added new endpoints for Vulnerabilities  - Added registry vulnerabilityScanning feature ### 1.2.0  - Added registry `apiSubnetAllowList` ### 1.2.1  - Amended `apiSubnetAllowList` Regex
  *
- * API version: 1.2.0
+ * API version: 1.2.1
  * Contact: support@cloud.ionos.com
  */
 
@@ -28,11 +28,11 @@ type PostTokenOutput struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPostTokenOutput(metadata NullableApiResourceMetadata, properties NullableTokenProperties) *PostTokenOutput {
+func NewPostTokenOutput(metadata ApiResourceMetadata, properties TokenProperties) *PostTokenOutput {
 	this := PostTokenOutput{}
 
-	this.Metadata = metadata.value
-	this.Properties = properties.value
+	this.Metadata = &metadata
+	this.Properties = &properties
 
 	return &this
 }
@@ -245,9 +245,13 @@ func (o PostTokenOutput) MarshalJSON() ([]byte, error) {
 		toSerialize["id"] = o.Id
 	}
 
-	toSerialize["metadata"] = o.Metadata
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 
-	toSerialize["properties"] = o.Properties
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
+	}
 
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

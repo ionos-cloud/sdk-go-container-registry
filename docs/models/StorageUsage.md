@@ -4,14 +4,14 @@
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-|**Bytes** | **NullableInt64** |  | |
-|**UpdatedAt** | Pointer to [**NullableTime**](time.Time.md) |  | [optional] |
+|**Bytes** | **int64** |  | |
+|**UpdatedAt** | Pointer to [**time.Time**](time.Time.md) |  | [optional] |
 
 ## Methods
 
 ### NewStorageUsage
 
-`func NewStorageUsage(bytes NullableInt64, ) *StorageUsage`
+`func NewStorageUsage(bytes int64, ) *StorageUsage`
 
 NewStorageUsage instantiates a new StorageUsage object
 This constructor will assign default values to properties that have it defined,
@@ -46,16 +46,6 @@ and a boolean to check if the value has been set.
 SetBytes sets Bytes field to given value.
 
 
-### SetBytesNil
-
-`func (o *StorageUsage) SetBytesNil(b bool)`
-
- SetBytesNil sets the value for Bytes to be an explicit nil
-
-### UnsetBytes
-`func (o *StorageUsage) UnsetBytes()`
-
-UnsetBytes ensures that no value is present for Bytes, not even an explicit nil
 ### GetUpdatedAt
 
 `func (o *StorageUsage) GetUpdatedAt() time.Time`
@@ -81,14 +71,4 @@ SetUpdatedAt sets UpdatedAt field to given value.
 
 HasUpdatedAt returns a boolean if a field has been set.
 
-### SetUpdatedAtNil
-
-`func (o *StorageUsage) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *StorageUsage) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
