@@ -51,7 +51,7 @@ const (
 	RequestStatusFailed  = "FAILED"
 	RequestStatusDone    = "DONE"
 
-	Version = "1.3.0"
+	Version = "1.3.1"
 )
 
 // APIClient manages communication with the Container Registry service API v1.2.1

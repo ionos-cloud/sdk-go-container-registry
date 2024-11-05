@@ -29,7 +29,7 @@ const (
 	IonosPinnedCertEnvVar = "IONOS_PINNED_CERT"
 	IonosLogLevelEnvVar   = "IONOS_LOG_LEVEL"
 	DefaultIonosServerUrl = "https://api.ionos.com/containerregistries"
-	DefaultIonosBasePath  = ""
+	DefaultIonosBasePath  = "/containerregistries"
 	defaultMaxRetries     = 3
 	defaultWaitTime       = time.Duration(100) * time.Millisecond
 	defaultMaxWaitTime    = time.Duration(2000) * time.Millisecond
@@ -135,7 +135,7 @@ func NewConfiguration(username, password, token, hostUrl string) *Configuration 
 	cfg := &Configuration{
 		DefaultHeader:      make(map[string]string),
 		DefaultQueryParams: url.Values{},
-		UserAgent:          "ionos-cloud-sdk-go-container-registry/v1.3.0",
+		UserAgent:          "ionos-cloud-sdk-go-container-registry/v1.3.1",
 		Debug:              false,
 		Username:           username,
 		Password:           password,
